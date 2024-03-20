@@ -24,13 +24,8 @@ cliente.on_connect = on_connect
 
 
 #Publicar a mesagem
-cliente.publish("aula_iot_3ano", "LIGA_LED_VERMELHO")
-time.sleep(1)
 cliente.publish("aula_iot_3ano", "DESLIGA_LED_VERMELHO")
 time.sleep(1)
-cliente.publish("aula_iot_3ano", "LIGA_LED_VERMELHO")
-time.sleep(1)
-cliente.publish("aula_iot_3ano", "DESLIGA_LED_VERMELHO")
 
 
 
