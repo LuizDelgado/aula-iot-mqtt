@@ -24,11 +24,8 @@ cliente.on_connect = on_connect
 
 
 #Publicar a mesagem
-cliente.publish("aula_iot_3ano", "DESLIGA_LED_VERMELHO")
+cliente.publish("luizinho_209182022", "OIE_GALERA")
 time.sleep(1)
-
-
-
 
 #Desconectar do server
 cliente.disconnect()

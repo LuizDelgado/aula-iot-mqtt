@@ -6,8 +6,8 @@ WiFiClient esp_do_luizinho_209182022; //Criação do meu objeto cliente
 PubSubClient MQTT(esp_do_luizinho_209182022); //Criação do meu objeto MQTT
 
 // Passo 2 - Credenciais de acesso WiFi e MQTT
-const char* ssid = "EXEMPLO"; //Nome da nossa rede Wifi
-const char* password = "EXEMPLO"; //senha da nossa rede Wifi
+const char* ssid = "Planta 4.0"; //Nome da nossa rede Wifi
+const char* password = "Planta40@eniacehdiferente"; //senha da nossa rede Wifi
 
 const char* endereco_broker = "test.mosquitto.org"; //Endereço do servidor mqtt
 int porta = 1883; //Port de comunicação do servidor
@@ -68,7 +68,7 @@ void reconecta_mqtt(){
   delay(1000);
   if(MQTT.connect(client_id)){ //Se o cliente se conectou, ele executa
     Serial.println("Conectado com sucesso ao servidor MQTT");
-    MQTT.subscribe("luizinho-209182022");
+    MQTT.subscribe("luizinho_209182022");
   }
   else { //Se ele não se conectou
     Serial.println("Falha na conexão com o servidor");
@@ -79,14 +79,14 @@ void reconecta_mqtt(){
 
 //                (topico, mensagem, tamanho da minha mensagem)
 void mqtt_callback(char* topic, byte* payload, unsigned int length){ //Função para recebo mensagem
-  String msg = " "; //Criando uma variavel local para decodificar a mensagem
-  //bruna - 5 letras
+  String msg; //Criando uma variavel local para decodificar a mensagem
+
   for(int i = 0; i < length; i++) //Colocar letra por letra dentro da variavel msg
   {
     char c = (char)payload[i];
     msg += c;
   }
-
+  Serial.println(msg);
   if (msg == "OIE_GALERA"){
     digitalWrite(13,HIGH);
   }
