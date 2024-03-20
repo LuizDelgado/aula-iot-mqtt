@@ -6,8 +6,8 @@ WiFiClient esp_do_luizinho_209182022; //Criação do meu objeto cliente
 PubSubClient MQTT(esp_do_luizinho_209182022); //Criação do meu objeto MQTT
 
 // Passo 2 - Credenciais de acesso WiFi e MQTT
-const char* ssid = "Planta 4.0"; //Nome da nossa rede Wifi
-const char* password = "Planta40@eniacehdiferente"; //senha da nossa rede Wifi
+const char* ssid = "EXEMPLO"; //Nome da nossa rede Wifi
+const char* password = "EXEMPLO"; //senha da nossa rede Wifi
 
 const char* endereco_broker = "test.mosquitto.org"; //Endereço do servidor mqtt
 int porta = 1883; //Port de comunicação do servidor
